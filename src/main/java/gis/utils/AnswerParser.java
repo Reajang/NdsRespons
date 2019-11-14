@@ -1,11 +1,10 @@
 package gis.utils;
 
-import gis.app.NdsRequest2;
 import gis.app.NdsResponse2;
 
 public class AnswerParser {
 
-    public static String getResponse(String number) {
+    private static String getResponse(String number) {
         switch (number) {
             case "0":
                 return "Налогоплательщик зарегистрирован в ЕГРН и имел статус действующего в указанную дату";
@@ -38,7 +37,7 @@ public class AnswerParser {
         System.out.println("ИНН: " + np.getINN());
         System.out.println("КПП: " + np.getKPP());
         System.out.println("Дата: " + np.getDT());
-        System.out.println("Ответ: " + np.getState());
+        System.out.println("Ответ: " + getResponse(np.getState()));
     }
 
 }
